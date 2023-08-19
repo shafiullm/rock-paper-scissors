@@ -4,10 +4,9 @@ function getComputerChoice(){
 }
 
 function playRound(playerChoice,computerChoice){
-    playerChoice = playerChoice.toLowerCase();
+    playerChoice = playerChoice.replace(/\s+/g, '').toLowerCase();
 
-    console.log("You played: " + playerChoice);
-    console.log("Computer played: " + computerChoice);
+    alert("You played " + playerChoice+"\nComputer played " + computerChoice);
 
     if(playerChoice === computerChoice){
         return 'Tied!';
