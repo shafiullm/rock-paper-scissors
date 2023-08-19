@@ -5,39 +5,41 @@ function getComputerChoice(){
 
 function playRound(playerChoice,computerChoice){
     playerChoice = playerChoice.replace(/\s+/g, '').toLowerCase();
-
-    alert("You played " + playerChoice+"\nComputer played " + computerChoice);
+    output = '';
 
     if(playerChoice === computerChoice){
-        return 'Tied!';
+        output+= 'Tied!';
     }
 
     else if(playerChoice === 'rock'){
         if(computerChoice === 'paper'){
-            return 'You Lost!';
+            output+=  'You Lost!';
         }
         else{
-            return 'You win!';
+            output+=  'You win!';
         }
     }
 
     else if(playerChoice === 'paper'){
         if(computerChoice === 'scissor'){
-            return 'You Lost!';
+            output+=  'You Lost!';
         }
         else{
-            return 'You win!';
+            output+=  'You win!';
         }
     }
 
     else if(playerChoice === 'scissor'){
         if(computerChoice === 'rock'){
-            return 'You Lost!';
+            output+=  'You Lost!';
         }
         else{
-            return 'You win!';
+            output+=  'You win!';
         }
     }
+    
+    alert("You: " + playerChoice+"\nComputer: " + computerChoice+"\n"+output);
+    return output;
 }
 
 function game(){
@@ -52,7 +54,6 @@ function game(){
         else if (output == 'You Lost!'){
             CPUScore++;
         }
-        alert(output);
     }
 
     if (userScore>CPUScore){
